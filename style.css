@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f3f3f3;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  #main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 75px;
+    background-color: #171717;
+  }
+
+  #main div {
+    display: block;
+    margin: 15px auto;
+    width: 35px;
+    height: 35px;
+    position: relative;
+  }
+  
+  input {
+      width: 45px;
+  }
