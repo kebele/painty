@@ -1,40 +1,43 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/c9da5a481d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <title>painty</title>
-</head>
-<body>
-    <canvas></canvas>
-    <div id="main">
-       <div class="colors black">
-           <input type="text" name="siyah" value="#000" style="background: #000">
-       </div> 
-       <div class="colors red">
-           <input type="text" name="kırmızı" value="#FF0000" style="background: #FF0000">
-       </div> 
-       <div class="colors blue">
-           <input type="text" name="mavi" value="#0000FF" style="background: #0000FF">
-       </div> 
-       <div class="colors green">
-           <input type="text" name="yesil" value="#008000" style="background: #008000">
-       </div> 
-       <div class="colors yellow">
-           <input type="text" name="sarı" value="#FFFF00" style="background: #FFFF00">
-       </div>
-       
-       <div class="thickness">
-           <input type="number" class="kalinlik" value="3">
-       </div>
-       <div><button class="clear">X</button> </div>
-       
-       
+  </head>
+  <body>
+    <button id="rules-btn" class="btn rules-btn">
+      <i class="fas fa-palette fa-2x"></i>
+    </button>
+
+    <div id="rules" class="rules">
+      <button class="btn btn-dark" id="black"></button>
+      <button class="btn btn-danger" id="red"></button>
+      <button class="btn btn-success" id="green"></button>
+      <button class="btn btn-primary" id="blue"></button>
+      <button class="btn btn-warning" id="yellow"></button>
+      <button class="btn" id="silgi">
+        <i class="fas fa-eraser fa-2x"></i>
+      </button>
+      <button class="btn" id="sil">
+        <i class="fas fa-trash-alt fa-2x"></i>
+      </button>
+      <!-- <button id="close-btn" class="btn btn-info">
+        <i class="far fa-window-close fa-2x"></i>
+      </button> -->
     </div>
 
-
-
+    <canvas id="canvas"></canvas>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

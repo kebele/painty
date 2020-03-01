@@ -1,29 +1,62 @@
-body {
+* {
     margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #f3f3f3;
-    font-family: 'Courier New', Courier, monospace;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+#canvas {
+    border : 5px solid black;
+    border-radius: 3px;
+    background: whitesmoke;
+}
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    padding: 10px 20px;
+    margin : 5px;
+    width: 70px;
+    height: 45px;
+    background: whitesmoke;
+    color: #fff;
+    border-radius: 5px;
   }
   
-  #main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 75px;
-    background-color: #171717;
+  .btn:focus {
+    outline: 0;
   }
 
-  #main div {
-    display: block;
-    margin: 15px auto;
-    width: 35px;
-    height: 35px;
-    position: relative;
+  .btn:hover {
+    background: orangered;
   }
   
-  input {
-      width: 45px;
+  .btn:active {
+    transform: scale(0.98);
   }
+
+  .rules-btn {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+  }
+
+  .rules {
+    /* .rules ı sol tarafa saklar */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* border : 1px solid lightcoral; */
+  background: whitesmoke;
+  color: #fff;
+  top : 85px;
+  min-height: 40vh;
+  width: 110px;
+  padding: 10px;
+  line-height: 1.5;
+  transform: translateX(-400px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.rules.show {
+  transform: translateX(0);
+}
