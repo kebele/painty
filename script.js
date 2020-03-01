@@ -56,9 +56,10 @@ window.addEventListener('load', () => {
 
    
     //event listeners
-    canvas.addEventListener('mousedown', startPosition);
-    canvas.addEventListener('mouseup', finishedPosition);
-    canvas.addEventListener('mousemove', draw);
+     canvas.addEventListener('mousedown' || 'touchstart', startPosition);
+    canvas.addEventListener('mouseup' || 'touchend', finishedPosition);
+    canvas.addEventListener('mousemove' || 'touchmove', draw);
+	
     sil.addEventListener('click', function(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
     });
