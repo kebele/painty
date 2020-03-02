@@ -47,7 +47,7 @@
   left: 0;
   /* border : 1px solid lightcoral; */
   background: whitesmoke;
-  color: #fff;
+  color: black;
   top : 85px;
   min-height: 40vh;
   width: 110px;
@@ -60,3 +60,10 @@
 .rules.show {
   transform: translateX(0);
 }
+
+#thickness {
+  width: 70px;
+  height: 45px;
+  padding-top: 5px;
+}
+

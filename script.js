@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
     const ctx = canvas.getContext('2d');
 
     const rulesBtn = document.getElementById('rules-btn');
-    const closeBtn = document.getElementById('close-btn');
+    // const closeBtn = document.getElementById('close-btn');
     const rules = document.getElementById('rules');
 
     const sil = document.getElementById('sil');
@@ -15,6 +15,10 @@ window.addEventListener('load', () => {
     const green = document.getElementById('green');
     const blue = document.getElementById('blue');
     const black = document.getElementById('black');
+    const thickness = document.getElementById('thickness');
+    // const thickBtn = document.getElementById('thick-btn');
+    // const thick = document.getElementById('thickness')
+    // const colPick = document.getElementById('color_pick')
 
     //resizing
     //window.addEventListener('resize', xxx) şeklindede yapabilirdik
@@ -36,8 +40,10 @@ window.addEventListener('load', () => {
     // ctx.lineTo(200,150);
     // ctx.closePath();
     // ctx.stroke();
+    
 
-    ctx.lineWidth = 10;
+    // ctx.lineWidth = 10;
+    ctx.lineWidth = thickness.value;
     ctx.strokeStyle = "black";
     //variables
     let painting = false;
@@ -50,20 +56,17 @@ window.addEventListener('load', () => {
     function finishedPosition(){
         painting = false;
         ctx.beginPath();
-        ctx.lineWidth = 10;
+        // ctx.lineWidth = 10;
+        ctx.lineWidth = thickness.value;
     }
    
 
    
     //event listeners
-    canvas.addEventListener('mousedown', startPosition);
-    canvas.addEventListener('mouseup', finishedPosition);
-    canvas.addEventListener('mousemove', draw);
-	
-	canvas.addEventListener('touchstart', startPosition);
-    canvas.addEventListener('touchend', finishedPosition);
-    canvas.addEventListener('touchmove', draw);
-	
+    
+
+    
+
     sil.addEventListener('click', function(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
     });
@@ -82,10 +85,14 @@ window.addEventListener('load', () => {
     black.addEventListener('click', () => {
         ctx.strokeStyle = "black"
     });
+    // colPick.addEventListener('change', () => {
+    //     ctx.strokeStyle = colPick.value;
+    // });
 
     silgi.addEventListener('click', function (e){
         
-        ctx.lineWidth = 35;
+        // ctx.lineWidth = 35;
+        ctx.lineWidth = thickness.value;
         // ctx.lineCap = "round";
         ctx.strokeStyle = "whitesmoke";
         // ctx.lineTo(e.clientX, e.clientY);
@@ -97,9 +104,32 @@ window.addEventListener('load', () => {
 
     });
 
+    canvas.addEventListener('mousedown', startPosition);
+    canvas.addEventListener('mouseup', finishedPosition);
+    canvas.addEventListener('mousemove', draw);
+
     rulesBtn.addEventListener('click', () => rules.classList.toggle('show'));
 
+    // thickBtn.addEventListener('click', () => thick.classList.toggle('show'));
+
     // closeBtn.addEventListener('click', () => rules.classList.remove('show'));
+
+    //thickness slider
+    function thicknessFn(){
+        // return true;
+        // video.volume = volumeSlider.value / 100;
+        // if(volumeSlider.value == 0){
+        //     mute.innerHTML = `<i class="fas fa-volume-mute fa-2x"></i>`
+        // } else {
+        //     mute.innerHTML = `<i class="fas fa-volume-up fa-2x"></i>`
+        // }
+        // e.preventDefault();
+        console.log(thickness.value);
+        ctx.lineWidth = thickness.value;
+    }
+
+    thickness.addEventListener('change', thicknessFn);
+
 
 function draw(e){
     if(!painting){
